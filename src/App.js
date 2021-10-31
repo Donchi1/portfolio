@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/service" component={Service} />
         <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/contact" component={Contact} />
-        <Route component={Error404} />
+        <Route exact strict component={Error404} />
       </Switch>
     </Router>
   )
