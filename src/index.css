@@ -1,0 +1,64 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@material-tailwind/react/tailwind.css';
+
+.animL {
+  animation: animeL linear 1s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.anim {
+  animation: show 0.5s linear;
+}
+@keyframes show {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animeL {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.animR {
+  animation: animeR linear 1s;
+}
+.fade {
+  animation: fade ease-in-out 0.5s;
+}
+
+.top {
+  top: 90%;
+}
+
+@keyframes animeR {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
