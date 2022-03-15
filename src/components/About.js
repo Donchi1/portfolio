@@ -6,6 +6,7 @@ import Tittle from './Tittle'
 function About() {
   return (
     <>
+      <div className="pt-10"></div>
       <Tittle text="About Me" />
       <div className="container mx-auto w-auto mt-8 lg:w-10/12" id="about">
         <div className=" flex flex-col lg:flex-row  justify-around items-center">
@@ -23,19 +24,19 @@ function About() {
             <div className="space-y-2 text-center">
               <p className="text-white font-medium italic tracking-wider text-lg">
                 My name is Donchi Neirus O. Am a citizen of Nigeria. Am a single
-                self taught web-developer living in Dubai.
+                self-taught web-developer living in Dubai.
               </p>
               <p className="text-white font-medium italic tracking-wider text-lg ">
-                Am a front end web developer using the best tools, strategies
-                and tecnologies creating cross-platform and mobile friendly
+                Am a front-end web developer using the best tools, strategies
+                and tecnologies in creating cross-platform and mobile friendly
                 websites.
               </p>
               <p className="text-white font-medium italic tracking-wider text-lg ">
-                I have learnt to utilize the knowledge of the tecnologies to
-                create a very nice website. Am not an expert but learning to
-                become one. My target is to become an expert in MERN stack
-                Development. Everyday learning and working on projects is my
-                routen.
+                I have learnt to utilize the knowledge of the front-end
+                tecnologies to create a very nice website. Am not an expert but
+                learning to become one. My goal is to become an expert in the
+                MERN stack web Development. Everyday learning and working on
+                projects is my routen.
               </p>
             </div>
           </div>
@@ -47,7 +48,7 @@ function About() {
             </h4>
             <div className="space-y-2">
               <p className="text-white font-medium italic tracking-wider text-lg">
-                One year experience with the front end technologies. Working
+                One year experience with the front-end technologies. Working
                 remotely making a responsive and scaleable website.
               </p>
               <p className="text-white font-medium italic tracking-wider text-lg ">
@@ -95,7 +96,7 @@ function About() {
 
               <Progress color="purple" value="70" />
               <span className="text-white transform  font-medium italic tracking-wider text-lg">
-                Taiwindcss
+                Tailwind Css
               </span>
 
               <Progress color="purple" value="70" />

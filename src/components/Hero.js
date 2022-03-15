@@ -35,7 +35,7 @@ function Hero() {
             </Button>
           </div>
         </div>
-        <div className=" w-full   mt-4 flex items-center  justify-center lg:mt-14 ">
+        <div className=" w-full   mt-4 flex items-center  justify-center  lg:mt-14 ">
           <img
             src="/assets/don1.jpg"
             alt="My Picture"

@@ -1,12 +1,22 @@
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
 
 function Navigation() {
   const [openNav, setOpenNav] = useState(false)
+  const [navMinimize, setNavMinimize] = useState(null)
+
+  useEffect(() => {
+    const isSmall = window.matchMedia('screen and (max-width: 960px)')
+    if (isSmall.matches) {
+      setNavMinimize(50)
+    } else {
+      setNavMinimize(8)
+    }
+  }, [])
 
   const menuVariant = {
     opened: {
-      top: 50,
+      top: navMinimize,
       opacity: 1,
       transition: {
         when: 'beforeChildren',
@@ -42,7 +52,7 @@ function Navigation() {
           <h4 className="text-lg font-extrabold text-white">DONCHI</h4>
         </div>
         <div
-          className="mr-8 text-purple-50 lg:hidden "
+          className="mr-8 text-purple-50 lg:hidden cursor-pointer "
           onClick={() => setOpenNav(!openNav)}
         >
           <button className="bg-white transition-all ease-linear duration-500  focus:border-none rounded ring-offset-2 focus:outline-none ring-2 ring-purple-700 flex flex-col items-center justify-center p-1">
@@ -55,8 +65,7 @@ function Navigation() {
           variants={menuVariant}
           animate={openNav ? 'opened' : 'closed'}
           initial={false}
-          className={`w-full 
-            
+          className={`w-full    
             lg:mr-16  lg:items-center lg:w-auto absolute top-12  lg:top-0 lg:relative lg:block transition-all duration-800 ease-in-out `}
         >
           <motion.ul className="text-sm divide-y divide-solid divide-gray-50 lg:divide-y-0 mt-7 lg:mt-0 lg:flex-grow pb-2 lg:pb-0 flex flex-col space-y-4 lg:space-y-0 pl-6 lg:pl-0 lg:space-x-6 lg:flex-row z-50 bg-gradient-to-r   from-black  to-purple-700 lg:from-transparent lg:to-transparent lg:bg-transparent ">
@@ -100,6 +109,46 @@ function Navigation() {
             </motion.a>
           </motion.ul>
         </motion.div>
+        <div
+          className={`w-full    
+            lg:mr-16  lg:items-center lg:w-auto absolute top-12  lg:top-0 lg:relative hidden lg:block transition-all duration-800 ease-in-out `}
+        >
+          <ul className="text-sm divide-y divide-solid divide-gray-50 lg:divide-y-0 mt-7 lg:mt-0 lg:flex-grow pb-2 lg:pb-0 flex flex-col space-y-4 lg:space-y-0 pl-6 lg:pl-0 lg:space-x-6 lg:flex-row z-50 bg-gradient-to-r   from-black  to-purple-700 lg:from-transparent lg:to-transparent lg:bg-transparent ">
+            <a
+              href="#home"
+              className="block focus:bg-purple-700 font-bold lg:text-lg text-white focus:text-green  hover:text-opacity-70 transition-colors duration-500 ease-in-out"
+            >
+              Home
+            </a>
+
+            <a
+              href="#about"
+              className="block pt-3 lg:pt-0 font-bold lg:text-lg text-white  active:text-green-500 hover:text-opacity-70 transition-colors duration-500 ease-in-out"
+            >
+              About
+            </a>
+            <a
+              href="#services"
+              className="block pt-3 lg:pt-0 font-bold lg:text-lg text-white  active:text-green-500 hover:text-opacity-70 transition-colors duration-500 ease-in-out"
+            >
+              Services
+            </a>
+
+            <a
+              href="#portfolio"
+              className="block pt-3 lg:pt-0  font-bold  lg:text-lg text-white  active:text-green-500 hover:text-opacity-70 transition-colors duration-500 ease-in-out"
+            >
+              Portfolio
+            </a>
+
+            <a
+              href="#contact"
+              className="block pt-3 lg:pt-0  lg:text-lg font-bold text-white  active:text-green-500 hover:text-opacity-70 transition-colors duration-500 ease-in-out"
+            >
+              Contact
+            </a>
+          </ul>
+        </div>
       </div>
     </>
   )
